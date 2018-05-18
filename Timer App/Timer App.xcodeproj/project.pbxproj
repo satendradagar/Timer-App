@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A91733E20A49F5E00DD0228 /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9A91733D20A49F5D00DD0228 /* Glass.aiff */; };
+		9A91734020A4A00500DD0228 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A91733F20A4A00500DD0228 /* AudioToolbox.framework */; };
 		9AA7FF9B2098C86D0002C98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7FF9A2098C86D0002C98C /* AppDelegate.swift */; };
 		9AA7FF9D2098C86D0002C98C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA7FF9C2098C86D0002C98C /* ViewController.swift */; };
 		9AA7FF9F2098C86D0002C98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA7FF9E2098C86D0002C98C /* Assets.xcassets */; };
@@ -16,6 +18,10 @@
 		9AA7FFB72098C8870002C98C /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AA7FFB52098C8870002C98C /* TodayViewController.xib */; };
 		9AA7FFBB2098C8870002C98C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AA7FFB92098C8870002C98C /* InfoPlist.strings */; };
 		9AA7FFBF2098C8870002C98C /* Timer.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9AA7FFAE2098C8870002C98C /* Timer.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9AEB224C20A2B48000233894 /* San Francisco - Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AEB224A20A2B48000233894 /* San Francisco - Ultralight.otf */; };
+		9AEB224D20A2B48000233894 /* San Francisco - Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9AEB224B20A2B48000233894 /* San Francisco - Regular.otf */; };
+		9AEB224F20A2C06600233894 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AEB224E20A2C06600233894 /* Media.xcassets */; };
+		9AEF27C42099C719007F96DF /* SSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEF27C32099C719007F96DF /* SSButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +46,21 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AA9AD5A20A1FC9E00531D20 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Font;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A6EF76320997CF1000878F8 /* DiscRecording.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = System/Library/Frameworks/DiscRecording.framework; sourceTree = SDKROOT; };
+		9A91733D20A49F5D00DD0228 /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
+		9A91733F20A4A00500DD0228 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9AA7FF972098C86D0002C98C /* Timer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA7FF9A2098C86D0002C98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA7FF9C2098C86D0002C98C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +75,10 @@
 		9AA7FFB82098C8870002C98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AA7FFBA2098C8870002C98C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9AA7FFBC2098C8870002C98C /* Timer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timer.entitlements; sourceTree = "<group>"; };
+		9AEB224A20A2B48000233894 /* San Francisco - Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "San Francisco - Ultralight.otf"; sourceTree = "<group>"; };
+		9AEB224B20A2B48000233894 /* San Francisco - Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "San Francisco - Regular.otf"; sourceTree = "<group>"; };
+		9AEB224E20A2C06600233894 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		9AEF27C32099C719007F96DF /* SSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A91734020A4A00500DD0228 /* AudioToolbox.framework in Frameworks */,
 				9AA7FFB12098C8870002C98C /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +136,8 @@
 		9AA7FFAF2098C8870002C98C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A91733F20A4A00500DD0228 /* AudioToolbox.framework */,
+				9A6EF76320997CF1000878F8 /* DiscRecording.framework */,
 				9AA7FFB02098C8870002C98C /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -121,14 +146,28 @@
 		9AA7FFB22098C8870002C98C /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				9AEF27C32099C719007F96DF /* SSButton.swift */,
 				9AA7FFB32098C8870002C98C /* TodayViewController.swift */,
 				9AA7FFB52098C8870002C98C /* TodayViewController.xib */,
 				9AA7FFB82098C8870002C98C /* Info.plist */,
 				9AA7FFB92098C8870002C98C /* InfoPlist.strings */,
+				9A91733D20A49F5D00DD0228 /* Glass.aiff */,
 				9AA7FFBC2098C8870002C98C /* Timer.entitlements */,
+				9AEB224920A2B48000233894 /* Fonts */,
+				9AEB224E20A2C06600233894 /* Media.xcassets */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
+		};
+		9AEB224920A2B48000233894 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9AEB224A20A2B48000233894 /* San Francisco - Ultralight.otf */,
+				9AEB224B20A2B48000233894 /* San Francisco - Regular.otf */,
+			);
+			name = Fonts;
+			path = "Timer App/Fonts";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -159,6 +198,7 @@
 				9AA7FFAA2098C8870002C98C /* Sources */,
 				9AA7FFAB2098C8870002C98C /* Frameworks */,
 				9AA7FFAC2098C8870002C98C /* Resources */,
+				9AA9AD5A20A1FC9E00531D20 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -222,8 +262,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A91733E20A49F5E00DD0228 /* Glass.aiff in Resources */,
+				9AEB224F20A2C06600233894 /* Media.xcassets in Resources */,
 				9AA7FFB72098C8870002C98C /* TodayViewController.xib in Resources */,
+				9AEB224C20A2B48000233894 /* San Francisco - Ultralight.otf in Resources */,
 				9AA7FFBB2098C8870002C98C /* InfoPlist.strings in Resources */,
+				9AEB224D20A2B48000233894 /* San Francisco - Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA7FFB42098C8870002C98C /* TodayViewController.swift in Sources */,
+				9AEF27C42099C719007F96DF /* SSButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

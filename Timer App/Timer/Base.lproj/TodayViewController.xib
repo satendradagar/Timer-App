@@ -1,37 +1,142 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="Timer" customModuleProvider="target">
             <connections>
+                <outlet property="minutes" destination="doG-R6-hR1" id="I6T-rE-cDg"/>
+                <outlet property="minutesCell" destination="lq2-Nz-qgp" id="mSl-Ia-LVw"/>
+                <outlet property="seconds" destination="1yf-x9-XjC" id="aba-vG-Lyd"/>
+                <outlet property="secondsCell" destination="dM0-z1-RPh" id="QJ8-Wq-K52"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-MB-4x2">
-                    <rect key="frame" x="0.0" y="22" width="304" height="28"/>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QJ0-HJ-YY0" customClass="SSButton" customModule="Timer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="1" width="160" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="28" id="4Yb-ZR-gMg"/>
+                        <constraint firstAttribute="height" constant="32" id="uSs-kd-vXz"/>
                     </constraints>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timer" id="pgq-dU-GDk">
-                        <font key="font" metaFont="system" size="23"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="set2_buttonStart" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="pTh-Bj-hH8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" white="0.80000000000000004" alpha="0.0" colorSpace="deviceWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                            <color key="value" name="textColor" catalog="System" colorSpace="catalog"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didClickedStartWithSender:" target="-2" id="KdA-Oc-YJG"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-Bv-hpi" customClass="SSButton" customModule="Timer" customModuleProvider="target">
+                    <rect key="frame" x="161" y="1" width="159" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="i77-bF-8l2"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="set2_buttonStop" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="3Q2-Cj-6xF">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" white="0.80000000000000004" alpha="0.0" colorSpace="deviceWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                            <color key="value" name="textColor" catalog="System" colorSpace="catalog"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelTimerButtonTappedWithSender:" target="-2" id="KIz-is-IJy"/>
+                    </connections>
+                </button>
+                <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="otn-8w-qx5">
+                    <rect key="frame" x="82" y="50" width="157" height="66"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bl2-jL-d2A">
+                            <rect key="frame" x="69" y="2" width="20" height="62"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="EaD-xe-wJw"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title=":" drawsBackground="YES" id="VGB-eX-wtx">
+                                <font key="font" size="50" name="SanFrancisco-Ultralight"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doG-R6-hR1">
+                            <rect key="frame" x="7" y="2" width="62" height="62"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="KQP-xB-X6k"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" alignment="right" title="55" placeholderString="00" drawsBackground="YES" id="lq2-Nz-qgp">
+                                <numberFormatter key="formatter" formatterBehavior="custom10_4" allowsFloats="NO" usesGroupingSeparator="NO" lenient="YES" paddingCharacter="0" formatWidth="2" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="2" id="DyA-oX-e7F">
+                                    <real key="minimum" value="0.0"/>
+                                    <real key="maximum" value="60"/>
+                                </numberFormatter>
+                                <font key="font" size="50" name="SanFrancisco-Ultralight"/>
+                                <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-x9-XjC">
+                            <rect key="frame" x="89" y="2" width="62" height="62"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="jAJ-8u-uVN"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" alignment="left" title="55" placeholderString="00" drawsBackground="YES" id="dM0-z1-RPh">
+                                <numberFormatter key="formatter" formatterBehavior="custom10_4" allowsFloats="NO" usesGroupingSeparator="NO" lenient="YES" paddingCharacter="0" formatWidth="2" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="2" id="LeR-sJ-TcA">
+                                    <real key="minimum" value="0.0"/>
+                                    <real key="maximum" value="60"/>
+                                </numberFormatter>
+                                <font key="font" size="50" name="SanFrancisco-Ultralight"/>
+                                <color key="textColor" name="windowFrameTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="1yf-x9-XjC" firstAttribute="leading" secondItem="Bl2-jL-d2A" secondAttribute="trailing" id="3zi-Wc-Xl6"/>
+                        <constraint firstAttribute="bottom" secondItem="1yf-x9-XjC" secondAttribute="bottom" constant="2" id="4AZ-E3-hgi"/>
+                        <constraint firstAttribute="bottom" secondItem="Bl2-jL-d2A" secondAttribute="bottom" constant="2" id="6dW-oc-IBA"/>
+                        <constraint firstItem="doG-R6-hR1" firstAttribute="top" secondItem="otn-8w-qx5" secondAttribute="top" constant="2" id="T9j-Nm-0WE"/>
+                        <constraint firstItem="Bl2-jL-d2A" firstAttribute="leading" secondItem="doG-R6-hR1" secondAttribute="trailing" id="XrH-UY-Tlo"/>
+                        <constraint firstAttribute="width" constant="157" id="dje-tF-aRH"/>
+                        <constraint firstItem="Bl2-jL-d2A" firstAttribute="centerX" secondItem="otn-8w-qx5" secondAttribute="centerX" id="fWl-9o-9vj"/>
+                        <constraint firstItem="Bl2-jL-d2A" firstAttribute="top" secondItem="otn-8w-qx5" secondAttribute="top" constant="2" id="i3D-N9-ncz"/>
+                        <constraint firstAttribute="height" constant="66" id="kwb-MD-sfh"/>
+                        <constraint firstItem="1yf-x9-XjC" firstAttribute="top" secondItem="otn-8w-qx5" secondAttribute="top" constant="2" id="yaQ-JK-S5R"/>
+                        <constraint firstAttribute="bottom" secondItem="doG-R6-hR1" secondAttribute="bottom" constant="2" id="z1v-Ji-7E6"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="KU6-MB-4x2" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="2" id="AfO-ab-vWV"/>
-                <constraint firstAttribute="trailing" secondItem="KU6-MB-4x2" secondAttribute="trailing" constant="18" id="Fst-pa-L2p"/>
-                <constraint firstItem="KU6-MB-4x2" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="30" id="aFo-8G-i2m"/>
-                <constraint firstAttribute="bottom" secondItem="KU6-MB-4x2" secondAttribute="bottom" constant="22" id="pP1-Fv-KED"/>
+                <constraint firstItem="otn-8w-qx5" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="DYc-t2-WWR"/>
+                <constraint firstAttribute="height" constant="120" id="Gyz-t7-Pjr"/>
+                <constraint firstItem="otn-8w-qx5" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="Ol3-9H-ybx"/>
+                <constraint firstAttribute="bottom" secondItem="j3x-Bv-hpi" secondAttribute="bottom" constant="1" id="Oyo-MA-Vnt"/>
+                <constraint firstItem="j3x-Bv-hpi" firstAttribute="width" secondItem="QJ0-HJ-YY0" secondAttribute="width" id="eaY-oL-XyV"/>
+                <constraint firstAttribute="bottom" secondItem="QJ0-HJ-YY0" secondAttribute="bottom" constant="1" id="lAX-jr-Tzm"/>
+                <constraint firstItem="QJ0-HJ-YY0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="mkA-0P-FWW"/>
+                <constraint firstItem="j3x-Bv-hpi" firstAttribute="leading" secondItem="QJ0-HJ-YY0" secondAttribute="trailing" constant="1" id="nM9-h2-LrA"/>
+                <constraint firstAttribute="trailing" secondItem="j3x-Bv-hpi" secondAttribute="trailing" id="xig-ew-coj"/>
             </constraints>
+            <point key="canvasLocation" x="39" y="64"/>
         </customView>
     </objects>
+    <resources>
+        <image name="set2_buttonStart" width="162" height="30.5"/>
+        <image name="set2_buttonStop" width="162" height="30.5"/>
+    </resources>
 </document>
